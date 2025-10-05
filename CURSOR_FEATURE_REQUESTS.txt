@@ -1,0 +1,322 @@
+CURSOR AI FEATURE REQUESTS
+============================
+
+This file contains two comprehensive feature requests for Cursor AI development team.
+
+FEATURE REQUEST 1: VISUAL UI DEBUGGING
+======================================
+
+# Visual UI Debugging for Flutter Apps - AI Should See What Developers See
+
+## Problem Statement
+
+Cursor AI currently cannot "see" the visual output of Flutter applications, requiring developers to manually describe UI issues, take screenshots, and provide context that should be automatically available. This creates a significant gap in the developer experience and limits the AI's ability to provide effective UI debugging assistance.
+
+### Current Limitations
+- **No Visual Context**: Cursor AI cannot see the running Flutter app's visual output
+- **Manual Issue Reporting**: Developers must manually describe UI problems (overflows, layout issues, performance problems)
+- **No Real-time Monitoring**: AI cannot detect issues as they occur
+- **Limited Debugging Context**: No access to widget tree, performance metrics, or visual state
+- **Inefficient Workflow**: Developers spend time describing obvious visual problems instead of focusing on solutions
+
+### Impact on Developer Experience
+- **Reduced Productivity**: Time spent on manual issue description instead of problem-solving
+- **Incomplete Context**: AI responses based on limited information
+- **Frustrating Workflow**: Obvious visual issues require manual explanation
+- **Missed Opportunities**: AI cannot proactively identify UI problems
+
+## Proposed Solution
+
+### Core Features
+
+#### 1. Visual Context Integration
+- **Real-time Screenshot Capture**: Automatic screenshots when issues occur
+- **Widget Tree Access**: Direct access to Flutter's widget tree structure
+- **Layout Analysis**: Automatic detection of overflow, constraint, and layout issues
+- **Performance Monitoring**: Real-time performance metrics and bottleneck detection
+
+#### 2. Interactive Debugging
+- **UI Element Interaction**: AI can simulate button presses, gestures, and interactions
+- **Audio Testing**: Detect audio output issues and timing problems
+- **Performance Benchmarking**: Automatic detection of unacceptable delays (e.g., 2-second piano button delay)
+- **Visual Regression Detection**: Compare UI states and identify unexpected changes
+
+#### 3. Proactive Issue Detection
+- **Automatic Problem Identification**: AI detects issues without user input
+- **Performance Alerts**: Real-time alerts for performance degradation
+- **Layout Warnings**: Automatic detection of potential layout problems
+- **Accessibility Issues**: Detection of accessibility and usability problems
+
+## User Experience Examples
+
+### Before (Current State)
+```
+Developer: "The piano button is slow and there's overflow"
+AI: "Can you describe the issue in more detail?"
+Developer: "It takes 2 seconds to respond and the layout is broken"
+AI: "Can you share a screenshot?"
+Developer: [Takes screenshot, describes problem again]
+AI: "Based on your description, here's a potential fix..."
+```
+
+### After (Proposed State)
+```
+AI: "I detected a 2.1-second delay on the piano button and layout overflow in the main container. Here's the fix:"
+[AI automatically identifies and fixes the issues]
+Developer: "Perfect, thanks!"
+```
+
+## Benefits
+
+### For Developers
+- **Faster Debugging**: Immediate identification of UI issues
+- **Better Context**: AI has complete visual and performance context
+- **Proactive Assistance**: Issues detected before they become problems
+- **Reduced Manual Work**: No need to describe obvious visual problems
+
+### For Cursor AI
+- **Better Understanding**: Complete context of the application state
+- **More Accurate Responses**: Based on actual visual output, not descriptions
+- **Proactive Problem Solving**: Can identify and fix issues automatically
+- **Enhanced User Experience**: More intuitive and efficient debugging workflow
+
+## Success Metrics
+
+- **Developer Productivity**: 50% reduction in time spent describing UI issues
+- **Issue Detection**: 80% of UI problems detected automatically
+- **Response Accuracy**: 90% of AI suggestions based on visual context
+- **User Satisfaction**: Significant improvement in debugging experience
+
+## Priority
+High - This addresses a fundamental gap in the developer experience for UI development.
+
+## Labels
+- feature-request
+- flutter
+- ui-debugging
+- visual-context
+- high-priority
+
+================================================================================
+
+FEATURE REQUEST 2: PROJECT CONTEXT MEMORY
+==========================================
+
+# Project-Specific Context Memory - AI Should Remember Project History
+
+## Problem Statement
+
+Cursor AI currently lacks the ability to maintain project-specific context, learnings, and domain knowledge across development sessions. This leads to repetitive mistakes, forgotten decisions, and the need to re-explain established patterns and business logic.
+
+### Current Limitations
+- **No Project Memory**: Cursor AI forgets project-specific decisions and learnings
+- **Context Expiration**: Session-based context limits long-term understanding
+- **Repeated Mistakes**: AI suggests previously rejected approaches
+- **Lost Domain Knowledge**: Business logic and domain expertise not preserved
+- **Inconsistent Solutions**: Different approaches for similar problems across sessions
+- **Development Loops**: AI gets stuck in repetitive solution attempts
+
+### Real-World Impact Example: Piano Application
+```
+Session 1: "We learned that staff notation should use MusicXML API, not SVG"
+Session 2: "Let's fix this staff notation issue" → AI suggests SVG approach
+Session 3: "We established that measures need total beats = time signature numerator"
+Session 4: "Fix this measure calculation" → AI suggests incorrect beat counting
+Session 5: "We decided on this specific audio library for piano sounds"
+Session 6: "Add piano sound" → AI suggests different audio library
+```
+
+**Result**: Developer constantly reverts AI suggestions and re-explains established patterns.
+
+## Proposed Solution
+
+### Core Features
+
+#### 1. Project Knowledge Base
+- **Persistent Memory**: Store project-specific learnings across sessions
+- **Decision History**: Track all technical and architectural decisions
+- **Domain Knowledge**: Maintain business logic and domain expertise
+- **Pattern Recognition**: Learn from repeated corrections and preferences
+
+#### 2. Contextual Learning System
+- **Learning from Corrections**: When developer reverts AI suggestions, learn why
+- **Pattern Storage**: Store successful approaches for future reference
+- **Anti-Patterns**: Remember approaches that were rejected and why
+- **Domain-Specific Rules**: Maintain business logic and constraints
+
+#### 3. Intelligent Memory Management
+- **Relevance Scoring**: Prioritize most relevant learnings for current context
+- **Memory Consolidation**: Merge similar learnings and avoid redundancy
+- **Forgetting Mechanism**: Remove outdated or irrelevant information
+- **Context Switching**: Adapt to different parts of the same project
+
+## User Experience Examples
+
+### Before (Current State)
+```
+Session 1: "We learned that staff notation should use MusicXML API"
+Session 2: "Fix this staff notation issue" → AI suggests SVG approach
+Session 3: "Add piano sound" → AI suggests HTML5 Audio
+Session 4: "Fix measure calculation" → AI suggests incorrect beat counting
+```
+
+### After (Proposed State)
+```
+Session 1: "We learned that staff notation should use MusicXML API"
+AI: "Learning stored: Staff notation → MusicXML API (Performance reasons)"
+Session 2: "Fix this staff notation issue"
+AI: "Based on our previous learning, I'll use MusicXML API approach"
+Session 3: "Add piano sound"
+AI: "I'll use Web Audio API as we established it provides better latency"
+Session 4: "Fix measure calculation"
+AI: "Applying our business rule: measure_total_beats = time_signature_numerator"
+```
+
+## Benefits
+
+### For Developers
+- **Consistent Solutions**: AI remembers and applies established patterns
+- **Reduced Repetition**: No need to re-explain decisions
+- **Faster Development**: Build on previous learnings
+- **Domain Expertise**: AI maintains business logic understanding
+
+### For Projects
+- **Knowledge Preservation**: Project expertise doesn't get lost
+- **Consistency**: Uniform approach across development sessions
+- **Efficiency**: Build on established patterns
+- **Quality**: Avoid previously identified anti-patterns
+
+## Success Metrics
+
+- **Learning Retention**: 90% of corrections remembered
+- **Consistency**: 95% of suggestions follow established patterns
+- **Efficiency**: 50% reduction in re-explaining decisions
+- **Quality**: 80% reduction in repeated mistakes
+
+## Priority
+High - This addresses a fundamental limitation in long-term project development.
+
+## Labels
+- feature-request
+- memory
+- context
+- learning
+- high-priority
+
+================================================================================
+
+TECHNICAL IMPLEMENTATION DETAILS
+=================================
+
+## Visual UI Debugging - Technical Approach
+
+### Phase 1: Basic Visual Integration
+- Widget tree access integration
+- Basic screenshot capture
+- Performance metrics collection
+- Layout issue detection
+
+### Phase 2: Advanced Features
+- Interactive UI testing
+- Audio output monitoring
+- Real-time issue detection
+- Automated problem reporting
+
+### Phase 3: AI Integration
+- Machine learning for issue pattern recognition
+- Predictive problem detection
+- Automated fix suggestions
+- Advanced visual analysis
+
+## Project Context Memory - Technical Approach
+
+### Phase 1: Basic Memory Storage
+- Project knowledge storage
+- Basic learning capture
+- Simple pattern recognition
+- Context retrieval
+
+### Phase 2: Learning System
+- Correction learning
+- Pattern consolidation
+- Anti-pattern detection
+- Confidence scoring
+
+### Phase 3: Advanced Context
+- Domain-specific knowledge
+- Business rule integration
+- Contextual suggestions
+- Memory optimization
+
+================================================================================
+
+DOMAIN KNOWLEDGE EXAMPLES
+==========================
+
+## Piano Application Domain Knowledge
+
+### Technical Learnings
+- Staff notation rendering: Use MusicXML API instead of SVG
+- Audio playback: Use Web Audio API with preloaded samples
+- Note positioning: Use absolute positioning with calculated coordinates
+- Performance: Use Web Workers for audio processing
+
+### Business Rules
+- measure_total_beats = time_signature_numerator
+- note_duration_sum <= measure_total_beats
+- rest_duration_sum + note_duration_sum = measure_total_beats
+- piano_key_range = 88_keys (A0 to C8)
+- black_keys_pattern = 2-3-2-3-2-3-2
+
+### Anti-Patterns
+- SVG for staff notation rendering (performance issues)
+- HTML5 Audio API for piano sounds (high latency)
+- CSS Flexbox for note positioning (alignment issues)
+- Monolithic component for staff rendering (maintainability issues)
+- Synchronous audio processing (UI stuttering)
+
+================================================================================
+
+SUBMISSION INSTRUCTIONS
+=======================
+
+## How to Submit to Cursor Development Team
+
+### 1. GitHub Issues (Primary Method)
+- Go to: https://github.com/getcursor/cursor/issues
+- Click "New Issue" → "Feature Request"
+- Copy and paste the content above for each issue
+- Submit both issues
+
+### 2. Community Engagement
+- Share on Discord: #feature-requests channel
+- Post on social media with #CursorAI #Flutter
+- Engage with Cursor community forums
+
+### 3. Expected Timeline
+- Immediate (1-2 weeks): Community discussion and feedback
+- Short-term (1-2 months): Technical feasibility assessment
+- Medium-term (3-6 months): Beta implementation
+- Long-term (6-12 months): Full feature implementation
+
+================================================================================
+
+SUMMARY
+=======
+
+These two feature requests address fundamental limitations in Cursor AI:
+
+1. **Visual UI Debugging**: AI should see what developers see
+2. **Project Context Memory**: AI should remember project history
+
+Both features would dramatically improve the developer experience by:
+- Eliminating manual issue description
+- Preventing repeated mistakes
+- Maintaining domain expertise
+- Providing proactive assistance
+
+The comprehensive documentation provides a clear path forward for implementing these critical features that would transform Cursor AI from a session-based assistant to a true project partner.
+
+================================================================================
+
+END OF DOCUMENT
